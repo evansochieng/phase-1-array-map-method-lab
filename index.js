@@ -11,6 +11,37 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+// Create an case title
+
+// // First let me do them separately
+// function upperCase(title){
+//   let titleCase = title.split(' ').map( function(word){
+//     return word.replace(word[0], word[0].toUpperCase());
+//   }).join(' ');
+
+//   return titleCase;
+// }
+
+// const titleCased = () => {
+//   let titleCasedTutorials = tutorials.map(upperCase);
+
+//   return titleCasedTutorials;
+// }
+
+// titleCased();
+
+// REDO USING ITERATION WITHIN ITERATION
+// EITHER SHOULD WORK
+// Iterate within the iteration
 const titleCased = () => {
-  return tutorials
+  let titleCasedTutorials = tutorials.map( (title) => {
+    let casedTitle = title.split(' ').map( function(word){
+      return word.replace(word[0], word[0].toUpperCase());
+    }).join(' ');
+    return casedTitle;
+  })
+
+  return titleCasedTutorials;
 }
+
+// FANTASTIC BOY!
